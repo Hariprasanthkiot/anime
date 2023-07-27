@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animeflix</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Poppins:ital,wght@0,400;0,500;1,500;1,600;1,800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="particles.js"></script>
+  <script src="app.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<style>
+    :root{
+        --blue : #0d6efd;
+        --red: #dc3545;
+    }
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        
+    }
+    .container-fluid{
+        font-family: 'Josefin Sans', sans-serif;
+        min-height: 100vh;
+        width: 100%;
+        background: black;
+        display: grid;
+        grid-template-columns: 0.20fr 0.04fr;
+        grid-template-rows: 0.8fr 3fr;
+        grid-template-areas: 'header header header'
+                             'sidebar introAnime introAnime'
+                             'sidebar animeList animeList'
+    }
+    .header{
+        display: flex;
+        margin-top: 10px;
+        height: 80px;
+        justify-content: space-between;
+        align-items: center;
+        background: black;
+        grid-area: header;
+    }
+ 
+    .header .logo  i{
+        scale: 1.8;
+        
+        margin-top: 9px;
+        margin-left: 13px;
+        cursor: pointer;
+        color: var(--blue);
+    }
+    .header h2{
+        font-size: 25px;      
+        padding: 20px;
+        color: white;    
+        font-family: 'Bruno Ace SC', cursive;
+        margin-left: 0px;
+    }
+    .header .nav button{
+        margin-right: 25px;
+        border: 2px solid;
+        transition: transform 1.2s;
+    }
+    .header .nav button:hover{
+     transform: scale(0.9);
+     color: white;
+    }
+    .header .nav i:hover{
+        color: white;
+        background: skyblue;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transform: rotate(190deg);
+    }
+    
+    .header input{
+        padding: 3px;
+        margin-top: 38px;
+    }
+    .header .nav i{
+        margin-top: 3.5px;
+        color: aqua;
+        cursor: pointer;
+        transition: transform 1.2s;
+        display: none;  /*change this later! dont forget */
+    }
+    
+    .sidebar{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100vh;
+        grid-area: sidebar;
+        padding: 30px;
+        transform: translateX(-10px);
+        position:sticky;
+    }
+    .sidebar i{
+        color: #0d6efd;
+        cursor: pointer;
+        transition: transform 1.2s;
+    }
+    .sidebar i:hover{
+        transform: translateX(7px);
+    }
+    
+    #page2{
+   background:linear-gradient(rgba(0,0,0,0.95), rgba(0,0,0,0.75),rgba(0,0,0,0.85)),url('https://w0.peakpx.com/wallpaper/24/511/HD-wallpaper-anime-anime-anime-collage.jpg');
+   animation-name: animebackground;
+   animation-duration: 20s;
+   animation-timing-function: linear;
+   animation-iteration-count: infinite;
+}
+
+@keyframes animebackground {
+  from { background-position: 0 0; }
+  to { background-position: 100% 0; }
+}
+
+    #page2{
+        max-height: 60vh;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+    }
+    #page2 h1{
+        margin-bottom: 0px;
+        transform: translateY(-18px);
+    }
+    #page2 .quoteAuthor{
+       display: flex;
+       justify-content: flex-end;
+       font-size: 12px;
+       margin-top: 9px;
+    }
+    #page2 .card{
+       box-shadow: 0px 1px 8px 5px rgba(220, 83, 52, 0.667);
+       height:250px;
+       background: #ffffff26;
+       width: 100%;
+       padding: 30px;
+       font-size: 12px;
+       display: flex;
+       overflow: hidden;
+       text-align: center;      
+       font-weight: bolder;
+       position: relative;
+    }
+    #page2 .card .wrapper{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    } 
+    #page2 .card .wrapper ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100px;
+        cursor: pointer;
+
+    }
+    #page2 .card .wrapper ul li{
+        display: flex;
+        border-radius: 50%;
+        border: 2px solid var(--blue);
+        padding: 6px;
+        margin-right: 5px;
+        transform: translateX(-20px);
+        justify-content: space-between;
+    }
+    #page2 .card .wrapper button{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,220%);
+    }  
+    @media screen  and (max-width: 576px){  /*MEDIA QUERY STARTS */
+        .container-fluid{
+            grid-template-areas: 'header header header'
+                                 'nav nav nav'
+                             'sidebar introAnime introAnime'
+                             'sidebar animeList animeList'
+        }
+        .header{
+            width: 100px;
+            display: flex;
+            position: relative;
+        }
+
+        .header .nav{
+            grid-area: nav;
+            position: absolute;
+            transform: translateY(-80px); 
+            margin-left: 360px;         
+        }
+        .header .nav button:first-child{
+          
+        }
+        .introAnime{
+            width: 400px;
+            margin-bottom: 40px;
+        }
+        .animeList{
+            width: 400px;
+        }
+        .introAnime .card .card-img-overlay {
+            font-size: 12px;          
+            color: white;
+            padding-top: 95px;
+            background: linear-gradient(rgba(0,0,0.75),rgba(0,0,0,0.55),rgba(0,0,0,0.95));
+    }
+    .animeList .card-group{
+        margin-top: 7px;
+        display: flex;
+        
+    }
+    .animeList .fa-heart{
+        scale: 0.8;
+        margin-right: 26px;
+        margin-bottom: 19px;
+    }
+    .animeList .card{
+        margin-right: 5=px;
+    } 
+    .header .nav{
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 35px;
+    }
+    .header .nav button{
+        background-color: var(--blue);
+        color: aliceblue;
+    }
+    .header .nav button:first-child{   
+        margin-top: 49px;
+        
+    }
+    .header .nav button:nth-child(3){
+    
+    }
+    #page2{
+        margin-top: 20px;       
+    }
+    
+    #page2 .card{
+        font-size: 11px;
+        padding: 5px;
+    }
+    #page .wrapper i{
+        display: flex;
+        cursor: pointer;
+        scale: 1.2;
+    }
+    }
+    @media screen  and (max-width: 706px){
+        .container-fluid{
+        font-family: 'Josefin Sans', sans-serif;
+        min-height: 100vh;
+        max-width: 100vh;
+        background: black;
+        display: grid;
+        grid-template-columns: 0.2fr 0.8fr;
+        grid-template-rows: 0.2fr 0.4fr;
+        grid-template-areas: 'header header header'
+                             'sidebar quote quote'
+                            
+    }
+    .header{
+        display: flex;
+        width: 100vh;
+    }
+    .header .logo{
+        
+    }
+    .header i{
+                scale: 0.6;
+        transform: translateX(-7px);
+    }
+     .header .nav{
+        margin-top: 180px;
+        scale: 0.6;
+        margin-bottom: 76px;
+            
+      }
+      .header .nav button:nth-child(1){
+        display: none;
+      }
+      .introAnime .card .card-img-overlay button{
+        transform: translateY(-190px);
+      }
+      #page2{
+        grid-area: quote;
+      }
+    }
+</style>
+<body>
+    <div class="container-fluid">
+        <div class="header d-flex ">
+          <div class="logo">  <h2 class="float-start">manga us!!</h2>
+         <input class="searc" type="text"> &nbsp;<i class="fa fa-search"></i> </div>
+         
+        <div class="nav">
+                <button class="btn btn-outline-primary">Wishlist | <span id="wishCount"></span> <i style="color: red;" class="fa fa-heart-o"></i></button>
+                <button class="btn btn-outline-danger"><a style="text-decoration: none; color: white ;" href="animeLogin.html" >Login</a> </button>
+            
+                <button class="btn btn-outline-primary">Signup </button>
+                <i  class="fa fa-moon-o fa-2x"></i>   
+            </div>
+        </div>
+        <div class="sidebar">
+          <a href="animeHome.html">  <i data-toggle="tooltip"  title="Home" class="fa fa-home fa-2x"></i> </a>
+          <a href="page2.html">   <i data-toggle="tooltip" title="manga Quote Generator"  class="fa fa-quote-left fa-2x"></i></a>
+          <i data-toggle="tool
+            tip" title="manga Reels" class="fa fa-superpowers fa-2x"></i>
+            <i data-toggle="tooltip" title="Podcasts" class="fa fa-podcast fa-2x"></i>
+            <i data-toggle="tooltip" title="Search" class="fa fa-search fa-2x"></i>
+            <i data-toggle="tooltip" title="Select Server" class="fa fa-server fa-2x"></i>
+        </div>
+   
+     <div id="page2" class=""> 
+          <h1>manga Quote</h1>
+        <div class="card  w-50" style="color: white; font-family: 'Poppins', sans-serif;   ">
+         <span class="quoteArea"> <i class="fa fa-quote-left fa-2x"> &nbsp; </i><span id="pquote">Forgetting is like a wound. The wound may heal, but it has already left a scar</span> &nbsp; <i class="fa fa-quote-right fa-2x"></i> </span>
+         <div class="quoteAuthor">
+           <span>___</span>
+           <p id="pauthor">  "Monkey D. Luffy",
+        </p>
+         </div>
+         <hr>
+         <div class="wrapper">
+            <div class="features">
+                <ul>
+                    <li><i onclick="playAudio()" id="sound" title="Hear Quote As Sound" data-toggle="tooltip" class="fa fa-volume-up"></i></li>
+                    <li><i id="copy" title="Copy To Clipboard" data-toggle="tooltip" class="fa fa-copy"></i></li>
+                    <li><i id="share" title="Share" data-toggle="tooltip" class="fa fa-share-alt"></i></li>
+                </ul>
+                <button onclick="show()" id="nextQuote" class="btn btn-success">New Quote</button>
+            </div>
+         </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    var hearts = document.querySelectorAll(".wishlist i");
+
+    hearts.forEach((heart) => {
+      heart.addEventListener("click", () => {
+        heart.classList.toggle('active');
+        updateCount();
+      });
+    });
+
+  
+
+    function updateCount() {
+      var hearts = document.querySelectorAll(".wishlist i");
+      let count = 0;
+
+      hearts.forEach((heart) => {
+        if (heart.classList.contains("active")) {
+          count++;
+        }
+      });
+
+      document.getElementById("wishCount").textContent = count;
+    }
+
+    updateCount();
+function switchPage(){
+    var page1 = document.getElementById("page1");
+    var page2 = document.getElementById("page2");
+    
+    if(page1.style.display === "none"){
+        page1.style.display = "block";
+        page2.style.display = "none";
+    } else {
+        page1.style.display = "none";
+        page2.style.display = "block";
+    }
+     
+};
+
+$(document).ready(function(){
+      $('[data-toggle="tooltip"]').tooltip();
+    });
+
+   //2nd Page 
+   
+   var quotes = [
+  
+"If you realize you made a mistake with the way you've been living your life, you just have to take the next moment and start over.",
+  "God would never put us through all this suffering if he didn't think we could bear it.",
+  "People can't live for the future without accepting reality.",
+  "Unnecessary thoughts will only interfere with your plays.",
+  "Human beings are strong because we have the ability to change ourselves.",
+  "Ruling over death means ruling over life. Death is the climax of life. To have the best death, you must honor life. ",
+  "If people could become friends simply by sharing bread and salt, life would be simpler.",
+  "If I ignore a friend I have the ability to help, wouldn't I be betraying him?",
+  "If people scrutinize you, just ignore them and do whatever you want to do.",
+  "The words you've said cannot be taken back. So you must take action to paint over what you have already said.",
+  "The most certain way to succeed is to try one more time. Our greatest weakness lies in giving up.",
+  "The ideal tool for controlling people is fear. And nothing overwhelms people more than an unseen fear.",
+  "You shouldn't judge people by how they look.",
+  "The things we can't obtain are the most beautiful ones.",
+  "We have no need for the past. All we need are the present and the future.",
+  "What is really wicked... is judging people without even trying to get to know them!",
+  "The time when you're happy is also the time when you're afraid that the happiness will end.",
+  "The only one who should decide which path to follow is yourself.",
+  "Not fighting frantically for your life is all right, too. The important thing is… to decide on your own what you should do. ",
+  "You yourself have to change first, or nothing will change for you!"
+];
+
+var authors = [
+  "Erza Scarlet (Fairy Tail)",
+  "Konno Yuuki (Sword Art Online II)",
+  "Kurokawa Mari (Gate: Jieitai Kanochi nite, Kaku Tatakaeri)",
+  "Gouenji Shuuya (Inazuma Eleven)",
+  "Saitama (One Punch Man)",
+  "Rory Mercury (Gate: Jieitai Kanochi nite, Kaku Tatakaeri)",
+  "Peppo (Gankutsuou)",
+  "Killua Zoldyck (Hunter X Hunter)",
+  "Zen Wistalia (Akagami no Shirayukihime)",
+  "Dyne Woodwonder (Overlord)",
+  "Classroom Crisis (Classroom Crisis)",
+  "Lelouch Lamperouge (Code Geass: Akito the Exiled)",
+  "Yato (Noragami)",
+  "Gilgamesh (Fate Stay Night - Unlimited Blade Works)",
+  "Ciel Phantomhive (Kuroshitsuji)",
+  "Ada Vessalius (Pandora Hearts)",
+  "Subarashii Sekai (Subarashii Sekai)",
+  "Zen Wistalia (Akagami no Shirayukihime)",
+  "Hakuren Oak (07 Ghost)",
+  "Gintoki Sakata (Gintama)"
+];
+var nrquotes = quotes.length;
+
+async function show(){
+    var nxtQuote = document.getElementById("nextQuote");
+  nxtQuote.innerText = "Loading....";  
+  index = Math.floor(Math.random() * (nrquotes - 1));
+  $("#pquote").text(quotes[index]); 
+  $("#pauthor").text(authors[index]);
+   
+ await new Promise(resolve => setTimeout(resolve, 1500)) ;
+ nxtQuote.innerText = "New Quote";
+} 
+
+function playAudio() {
+            var textInput = document.getElementById("pquote").textContent;
+
+            if ('speechSynthesis' in window) {
+                var synthesis = window.speechSynthesis;
+
+                var utterance = new SpeechSynthesisUtterance(textInput);
+
+                utterance.lang = 'en-US'; 
+                utterance.rate = 1.0; 
+                utterance.pitch = 1.0; 
+
+                synthesis.speak(utterance);
+            } else {
+                alert('Speech synthesis is not supported in your browser.');
+            }
+        }
+
+</script>   
+</html>
+
+
