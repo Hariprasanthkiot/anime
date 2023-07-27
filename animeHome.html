@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>manga us!!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Poppins:ital,wght@0,400;0,500;1,500;1,600;1,800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="particles.js"></script>
+  <script src="app.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<style>
+      
+    :root{
+        --blue : #0d6efd;
+        --red: #dc3545;
+    }
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .container-fluid{
+        
+        font-family: 'Josefin Sans', sans-serif;
+        min-height: 100vh;
+        width: 100%;
+        background: black;
+        display: grid;
+        grid-template-columns: 0.20fr 0.04fr;
+        grid-template-rows: 0.7fr 3fr;
+        grid-template-areas: 'header header header'
+                             'sidebar introAnime introAnime'
+                             'sidebar animeList animeList'
+    }
+    .header{
+        display: flex;
+        margin-top: 10px;
+        height: 80px;
+        justify-content: space-between;
+        align-items: center;
+        background: black;
+        color: white;
+        grid-area: header;
+    }
+    .header .search{
+       margin-top: 36px;
+    }
+    .header .nav-item {
+        text-decoration: none;
+       margin-right: 9px;
+    }
+
+    .header .search i{
+        scale: 1.8;
+        margin-top: 9px;
+        margin-left: 13px;
+        cursor: pointer;
+        color: var(--blue);
+    }
+    .header h2{
+        font-size: 25px;      
+        padding: 20px;
+        color: white;    
+        font-family: 'Bruno Ace SC', cursive;
+        margin-left: 0px;
+    }
+    .header  button{
+        margin-right: 25px;
+        margin-left: 30px;
+        border: 2px solid;
+        transition: transform 1.2s;
+    }
+    .header  button:hover{
+     transform: scale(0.9);
+     color: white;
+    }
+    .header  i:hover{
+        color: white;
+        background: skyblue;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transform: rotate(190deg);
+    }
+    .header input{
+        padding: 3px;
+    }
+    .header  i{
+        margin-top: 3.5px;
+        color: aqua;
+        cursor: pointer;
+        transition: transform 1.2s;
+        display: none;  /*change this later! dont forget */
+    }
+    
+    .sidebar{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100vh;
+        grid-area: sidebar;
+        padding: 30px;
+        transform: translateX(-10px);
+        position:sticky;
+    }
+    .sidebar i{
+        color: #0d6efd;
+        cursor: pointer;
+        transition: transform 1.2s;
+    }
+    .sidebar i:hover{
+        transform: translateX(7px);
+    }
+    .introAnime{
+        grid-area: introAnime;    
+         
+        margin-top: 32px;      
+       
+    }
+    .animeList .card{
+        position: relative;
+        
+    }
+    .animeList .card:hover{
+        background: linear-gradient(rgba(0,0,255,0.05), rgba(0,255,0,0.15));
+    }
+    .introAnime .card-img-top{
+        height: 45vh;
+        object-fit: cover;
+    }
+    .introAnime .card .card-img-overlay {
+            font-size: 15px;
+                  
+            color: white;
+            padding-top: 90px;
+            background: linear-gradient(rgba(0,0,0.75),rgba(0,0,0,0.55),rgba(0,0,0,0.95));
+    }
+   
+    .introAnime .card .card-img-overlay p{
+        margin-top: 17px;
+    }
+    .introAnime .card .card-img-overlay i{
+        color: white;       
+    }
+    .introAnime .card .card-img-overlay button{       
+        padding: 7px;
+        border-radius: 6px;
+        border: 0;
+        transition: 1.3s;
+        background: transparent;
+        position: relative;
+        font-family: poppins;
+        background: white;
+        font-weight: bolder;
+        z-index: 10;
+        cursor: pointer;
+        color: black;
+        
+    }   
+    .introAnime .card .card-img-overlay button::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 50%;
+        border-radius: 7px;
+        z-index: -1;
+        background: orange;
+        transition: 0.7s;
+    }
+    .introAnime .card .card-img-overlay button:hover:after{
+        width: 100%;
+      
+    }
+    .introAnime .card .card-img-overlay .age,.hd{
+        background: white;
+        color: #0d6efd;
+        padding: 5px;
+        border-radius: 5px;
+        font-size: 12px;
+        margin-bottom: 5px;
+    }
+    .animeList .card{
+        height: 30vh;       
+        width: 20vh;
+        margin-right: 9px;
+    }
+    .animeList .card-group{
+        margin-top: -40px;
+    }
+    .animeList .card-img-overlay{
+        margin-top: 95px;
+        color: white;
+        text-shadow: 2px 2px #030303;
+        cursor: pointer;    
+        transition: 0.7s;   
+        opacity: 0;
+        height: 120px;
+    }
+    .animeList .card-img-overlay .card-title{
+        font-size: 14px;
+    }
+    .animeList .card-img-overlay:hover{
+        background: black;
+        opacity: 1;
+    }
+    .animeList .card-img-overlay .btn{
+        text-shadow: none;
+        
+    }
+    .animeList .card-img-top{
+         height: 30vh;
+         position: relative;
+    }
+   
+     .btn{
+        font-size: 12px;
+        margin-top: 6px;
+        margin-left: -4px;
+        cursor: pointer;
+    }
+    .animeList h2{
+        margin-bottom: 52px;
+        font-size: 20px;
+    }
+    .animeList .card .wishlist{
+        scale: 1.5;
+        position: absolute;
+        top: 10px;
+        left: 83%;
+        cursor: pointer;
+        transition: 0.8s;
+        color: grey;
+        transition:  all 1.9s;
+    }
+    .animeList .card .wishlist:active{
+        transform: scale(1.9);
+    }
+    .active{
+       color: red;
+    }
+    #page2{
+   background:linear-gradient(rgba(0,0,0,0.95), rgba(0,0,0,0.75),rgba(0,0,0,0.85)),url('https://w0.peakpx.com/wallpaper/24/511/HD-wallpaper-anime-anime-anime-collage.jpg');
+   animation-name: animebackground;
+   animation-duration: 20s;
+   animation-timing-function: linear;
+   animation-iteration-count: infinite;
+}
+
+@keyframes animebackground {
+  from { background-position: 0 0; }
+  to { background-position: -2000px 0; }
+}
+
+    #page2{
+        max-height: 60vh;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+    }
+    #page2 h1{
+        margin-bottom: 0px;
+        transform: translateY(-18px);
+    }
+    #page2 .quoteAuthor{
+       display: flex;
+       justify-content: flex-end;
+       font-size: 12px;
+       margin-top: 9px;
+    }
+    #page2 .card{
+       box-shadow: 0px 1px 8px 5px rgba(220, 83, 52, 0.667);
+       height:250px;
+       background: #ffffff26;
+       width: 100%;
+       padding: 30px;
+       font-size: 12px;
+       display: flex;
+       overflow: hidden;
+       text-align: center;      
+       font-weight: bolder;
+       position: relative;
+    }
+    #page2 .card .wrapper{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    } 
+    #page2 .card .wrapper ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100px;
+        cursor: pointer;
+
+    }
+    #page2 .card .wrapper ul li{
+        display: flex;
+        border-radius: 50%;
+        border: 2px solid var(--blue);
+        padding: 6px;
+        margin-right: 5px;
+        transform: translateX(-20px);
+        justify-content: space-between;
+    }
+    #page2 .card .wrapper button{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,220%);
+    }  
+   
+    #cartPage {
+
+  position: fixed;
+  top: 0;
+  right: -400px;  /*selfNote: change this back again,  dont forget */
+  bottom: 0;
+   border-radius: 12px;
+  width: 300px;
+  background: #dc3545;
+  z-index: 9999;
+  padding: 20px;
+  transition: all 0.8s ease-in-out;
+  display: flex;
+  
+  flex-direction: column;
+  align-items: flex-start
+  
+  
+  ;
+}
+#cartPage .btn{
+    top: 5px;
+    position: absolute;
+    left: 36%;
+}
+#cartPage li{
+    list-style: none;
+    text-decoration: none;
+    color: white;
+    position: absolute;
+    top: 90px;
+}
+#cartPage img{
+    height: 70px;
+    width: 60px;
+    position: relative;
+}
+#cartPage div{
+    font-family: poppins;
+    color: white;
+    margin-top: 15px;
+}
+  #cartPage.showPage {
+  right:0px;
+}
+
+#wishCart .wishlist-item {
+  margin-bottom: 10px;
+}
+
+
+   @media screen and (max-width:768px) {
+    .introAnime .card .card-img-overlay{
+        padding-top: 50px;
+        
+    }
+    .introAnime{
+        
+    }
+    .header .nav button:nth-child(3){
+        display: none;
+    }
+    .header .search{
+        position: relative;
+    }
+    .header .search i{
+        position: absolute;
+        top: 0;
+        left: 77%;
+    }
+    .sidebar{
+        
+      
+    }
+    .sidebar i{
+       margin-bottom: 50px;
+    }
+   }
+</style>
+<body>
+    <div class="container-fluid">
+        <div class="header  mt-5 mt-lg-2 d-flex ">
+            <nav class="navbar navbar-fixed-top   w-100  navbar-expand-lg bg-primary">
+                  <a class="navbar-brand" style="font-size: 30px;        font-family: 'Bruno Ace SC', cursive;
+                  "  href="#">manga us!! </a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" style="color: white;" href="#">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" id="wishToggle" style="color: white;" href="#">Wishlist - <span  id="wishCount"></span></a>
+                      </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="animeLogin.html" style="color: white"; cursor: pointer; id=btn>Login</a>
+                      </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                      <input class="form-control m-2" type="search" placeholder="Search" aria-label="Search">
+                      <button class="btn btn-danger" type="submit">Search</button>
+                    </form>
+                </div>
+              </nav>
+        </div>
+        <div class="sidebar">
+            <i data-toggle="tooltip" onclick="switchPage()" title="Home" class="fa fa-home fa-2x"></i>
+         <a href="page2.html">  <i data-toggle="tooltip" title="manga Quote Generator"  class="fa fa-quote-left fa-2x"></i></a>          
+          <i data-toggle="tooltip" title="manga Reels" class="fa fa-superpowers fa-2x"></i>
+            <i data-toggle="tooltip" title="Podcasts" class="fa fa-podcast fa-2x"></i>
+            <i data-toggle="tooltip" title="Search" class="fa fa-search fa-2x"></i>
+            <i data-toggle="tooltip" title="Select Server" class="fa fa-server fa-2x"></i>
+        </div>
+    <div id="page1 ">  
+        <div class="introAnime "> <h2 style="color: white";>Recommended</h2>
+           <div class="card text-start"> 
+             <img class="card-img-top" src="https://manga-diyari.com/wp-content/uploads/WP-manga/data/manga_608479904dcc4/6268fa8e9352c6dfc408e0841adcb32d/001.jpg"  alt="Title">
+            
+                <div class="card-img-overlay">
+                  <div style="font-size: 15px;" class="frstLine">
+                    <i class="fa fa-star"></i> 9.9 &nbsp;  
+                    <span class="chapters"></i>100+ chapters &nbsp;
+                    <span class="hd">HD</span> &nbsp;
+                    <span class="age">no age limits</span>
+                  </div>  
+                    <p class="w-75 d-flex flex-wrap">The Last Hero: No one is safe in the apocalypse, least of all a dorm supervisor who was forced to venture out into the zombie-infested world for survival. In a moment of crisis, Yang Hao obtains the “Stat Point (SP) Harvest System” and starts picking up strength, agility, and even mutated blood SP… Thus starts Yang Hao’s days of claiming all the food, beautiful women, and land that he could see. Bodies of mutants, evolved beasts, and ancient warriors lay in his wake as he forges a bloody path to become the King of the Apocalypse!</p>
+                    <button id="bl_watch"> 
+                       <i class=" fa fa-play-circle" style="font-size: 18px;"></i> <span> <a href="https://www.bilibilicomics.com/detail/mc476?from=manga_index" type="button"> read now</a> </span></button>            
+           </div>
+        </div>
+      </div>  
+    <div class="animeList d-sm-flex flex-sm-column
+     flex-wrap">
+        <h2 style="color: white";>popular mangas</h2>
+         <div class="card-group row">Anime
+           <div class="col-4 col-md-2 col-lg-2"> 
+            <div class="card  col shadow p-2 mb-2 bg-black">  
+                <img class="card-img-top" src="https://i0.hdslb.com/bfs/comic-static/45d3fe4d7561121d5611e55fbd6fa21e7ca14c2a.png@300w.webp" alt="Card image cap">
+                <div class="card-img-overlay" >
+                    <h4 class="card-title" style="color: white;">The Disappearing Classroom</h4>
+                    <p class="btn btn-danger" id="btn"><a href="https://www.bilibilicomics.com/detail/mc241?from=manga_index">read now</a></p>
+                </div>
+                <div class="wishlist"
+                 >
+               <i  onclick="change()" data-toggle="tooltip" data-bs-title="Add To Wishlist?" class="fa fa-heart "></i> 
+                </div>
+            </div>
+             </div>
+             <div class="col-4 col-md-2 col-lg-2"> 
+  
+            <div class="card col shadow p-2 mb-2 bg-black">
+                <img class="card-img-top" src="https://i0.hdslb.com/bfs/comic-static/3e728e756478f553a12cc9d56219a2796604ffdf.png@300w.webp" alt="Card image cap">
+                <div class="card-img-overlay">
+                    <h4 class="card-title">A Record of a Mortal's Journey to Immortality</h4>
+                    <p class="btn btn-danger" id="btn"><a href="https://www.bilibilicomics.com/detail/mc95?from=manga_search">read now</a></p>
+                </div>
+                <div class="wishlist"
+                >
+                    <i  onclick="change()" data-toggle="tooltip" data-bs-title="Add To Wishlist?" class="fa fa-heart "></i> 
+                </div>
+            </div>
+            </div>
+            <div class="col-4 col-md-2 col-lg-2"> 
+  
+                <div class="card col shadow p-2 mb-2 bg-black">
+                    <img class="card-img-top" src="https://i0.hdslb.com/bfs/comic-static/3f5bb68a69bcda09ba71e1eea2088eaacf512e5f.png@300w.webp" alt="Card image cap">
+                    <div class="card-img-overlay">
+                        <h4 class="card-title">Rich Player</h4>
+                        <p class="btn btn-danger" id="btn"><a href="https://www.bilibilicomics.com/detail/mc3241">read now</a></p>
+                    </div>
+                    <div class="wishlist"
+                    >
+                        <i  onclick="change()" data-toggle="tooltip" data-bs-title="Add To Wishlist?" class="fa fa-heart "></i> 
+                    </div>
+                </div>
+                </div>
+      <div class="col-4 col-md-2 col-lg-2">     
+            <div class="card col shadow p-2 mb-2 bg-black">
+                <img class="card-img-top" src="https://i0.hdslb.com/bfs/comic-static/4eecf2a728b7fbd5f385e4085fa7037de5d74efb.jpg@300w.webp" alt="Card image cap">
+                <div class="card-img-overlay">
+                    <h4 class="card-title">Tang Yin in the Otherworld</h4>
+                    <p class="btn btn-danger" id="btn"><a href="https://www.bilibilicomics.com/detail/mc3240">read now</a></p>
+                </div>
+                <div class="wishlist"
+                >
+                    <i  onclick="change()" data-toggle="tooltip" data-bs-title="Add To Wishlist?" class="fa fa-heart "></i> 
+                </div>
+            </div>
+        </div>
+        <div class="col-4 col-md-2 col-lg-2"> 
+    
+            <div class="card col shadow p-2 mb-2 bg-black">
+                <img class="card-img-top" src="https://i0.hdslb.com/bfs/comic-static/a5302b9655713f98848df72159eb4dd4c395c4a8.png@300w.webp" alt="Card image cap">
+                <div class="card-img-overlay">
+                    <h4 class="card-title">Silver Devil King</h4>
+                    <p class="btn btn-danger" id="btn"><a href="https://www.bilibilicomics.com/detail/mc690">read now</a></p>
+                </div>
+                <div class="wishlist"
+                >
+                    <i  onclick="change()" data-toggle="tooltip" data-bs-title="Add To Wishlist?" class="fa fa-heart "></i> 
+                </div>
+            </div>
+        </div>
+        <div class="col-4 col-md-2 col-lg-2"> 
+    
+            <div class="card col shadow p-2 mb-2 bg-black">
+                <img class="card-img-top" src="https://i0.hdslb.com/bfs/comic-static/c7c87d8796831a41185ada8dd494680fc451fa48.png@300w.webp" alt="Card image cap">
+                <div class="card-img-overlay">
+                    <h4 class="card-title">The Sword Of Dawn</h4>
+                    <p class="btn btn-danger" id="btn"><a href="https://www.bilibilicomics.com/detail/mc39">read now</a></p>
+                </div>
+                <div class="wishlist"
+                 >
+                    <i  onclick="change()" data-toggle="tooltip" data-bs-title="Add To Wishlist?" class="fa fa-heart "></i> 
+                </div>
+            </div>
+        </div>
+        <div class="col-4 col-md-2 col-lg-2"> 
+    
+            <div class="card col shadow p-2 mb-2 bg-black">
+                <img class="card-img-top" src="https://i0.hdslb.com/bfs/comic-static/5428571f9dd18b9bd07bd570828482b09e418728.png@300w.webp" alt="Card image cap">
+                <div class="card-img-overlay">
+                    <h4 class="card-title">The Future Me is a Conqueror</h4>
+                    <p class="btn btn-danger" id="btn"><a href="https://www.bilibilicomics.com/detail/mc1901">read now</a></p>
+                </div>
+                <div class="wishlist"
+                >
+                    <i  onclick="change()" data-toggle="tooltip" data-bs-title="Add To Wishlist?" class="fa fa-heart "></i> 
+                </div>
+            </div>    
+            
+            </div>
+        </div>
+      </div>  
+     </div>  
+    
+      
+     </div><!--1st page ends here-->
+     
+     <div id="cartPage"  class="container">
+        <div class="btn btn-warning"  style="height: 30px;">
+            Wishlist Items
+        </div>
+       
+      </div>
+    
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+
+var cartBtn = document.getElementById("cartPage");
+var toggleBtn = document.getElementById("wishToggle");
+
+toggleBtn.addEventListener("click", () =>{
+    cartBtn.classList.toggle("showPage")
+});
+
+var hearts = document.querySelectorAll(".wishlist i");
+var wishCart = document.getElementById("cartPage");
+
+hearts.forEach((heart) => {
+  heart.addEventListener("click", (event) => {
+    var cardTitle = event.target.closest(".card").querySelector(".card-title").textContent;
+    var cardImg = event.target.closest(".card").querySelector(".card-img-top").src;
+    var watch = event.target.closest(".card").querySelector("#btn").textContent;
+    var existingItem = wishCart.querySelector(`.wishlist-item[data-title="${cardTitle}"]`);
+
+0
+
+    if (existingItem) {
+      wishCart.removeChild(existingItem);
+    } else {
+
+      var newItem = document.createElement("div");
+      newItem.classList.add("wishlist-item");
+      newItem.setAttribute("data-title", cardTitle);
+
+      newItem.innerHTML = `
+        <div>${cardTitle}</div>
+        <img src="${cardImg}" alt="${cardTitle}">
+        <div class="btn-primary w-75 p-2" style="cursor: pointer; font-size:11px; background:var(--blue); border-radius:8px">${watch}</div>
+      `;
+      
+      
+      wishCart.appendChild(newItem);
+    }
+  });
+});
+
+
+
+
+
+    var hearts = document.querySelectorAll(".wishlist i");
+
+    hearts.forEach((heart) => {
+      heart.addEventListener("click", () => {
+        heart.classList.toggle('active');
+        updateCount();
+      });
+    });
+
+  
+
+    function updateCount() {
+      var hearts = document.querySelectorAll(".wishlist i");
+      let count = 0;
+
+      hearts.forEach((heart) => {
+        if (heart.classList.contains("active")) {
+          count++;
+        }
+      });
+
+      document.getElementById("wishCount").textContent = count;
+    }
+
+    updateCount();
+
+
+$(document).ready(function(){
+      $('[data-toggle="tooltip"]').tooltip();
+    });
+
+   //2nd Page 
+   
+   var quotes = [
+  
+"If you realize you made a mistake with the way you've been living your life, you just have to take the next moment and start over.",
+  "God would never put us through all this suffering if he didn't think we could bear it.",
+  "People can't live for the future without accepting reality.",
+  "Unnecessary thoughts will only interfere with your plays.",
+  "Human beings are strong because we have the ability to change ourselves.",
+  "Ruling over death means ruling over life. Death is the climax of life. To have the best death, you must honor life. ",
+  "If people could become friends simply by sharing bread and salt, life would be simpler.",
+  "If I ignore a friend I have the ability to help, wouldn't I be betraying him?",
+  "If people scrutinize you, just ignore them and do whatever you want to do.",
+  "The words you've said cannot be taken back. So you must take action to paint over what you have already said.",
+  "The most certain way to succeed is to try one more time. Our greatest weakness lies in giving up.",
+  "The ideal tool for controlling people is fear. And nothing overwhelms people more than an unseen fear.",
+  "You shouldn't judge people by how they look.",
+  "The things we can't obtain are the most beautiful ones.",
+  "We have no need for the past. All we need are the present and the future.",
+  "What is really wicked... is judging people without even trying to get to know them!",
+  "The time when you're happy is also the time when you're afraid that the happiness will end.",
+  "The only one who should decide which path to follow is yourself.",
+  "Not fighting frantically for your life is all right, too. The important thing is… to decide on your own what you should do. ",
+  "You yourself have to change first, or nothing will change for you!"
+];
+
+var authors = [
+  "Erza Scarlet (Fairy Tail)",
+  "Konno Yuuki (Sword Art Online II)",
+  "Kurokawa Mari (Gate: Jieitai Kanochi nite, Kaku Tatakaeri)",
+  "Gouenji Shuuya (Inazuma Eleven)",
+  "Saitama (One Punch Man)",
+  "Rory Mercury (Gate: Jieitai Kanochi nite, Kaku Tatakaeri)",
+  "Peppo (Gankutsuou)",
+  "Killua Zoldyck (Hunter X Hunter)",
+  "Zen Wistalia (Akagami no Shirayukihime)",
+  "Dyne Woodwonder (Overlord)",
+  "Classroom Crisis (Classroom Crisis)",
+  "Lelouch Lamperouge (Code Geass: Akito the Exiled)",
+  "Yato (Noragami)",
+  "Gilgamesh (Fate Stay Night - Unlimited Blade Works)",
+  "Ciel Phantomhive (Kuroshitsuji)",
+  "Ada Vessalius (Pandora Hearts)",
+  "Subarashii Sekai (Subarashii Sekai)",
+  "Zen Wistalia (Akagami no Shirayukihime)",
+  "Hakuren Oak (07 Ghost)",
+  "Gintoki Sakata (Gintama)"
+];
+var nrquotes = quotes.length;
+
+async function show(){
+    var nxtQuote = document.getElementById("nextQuote");
+  nxtQuote.innerText = "Loading....";  
+  index = Math.floor(Math.random() * (nrquotes - 1));
+  $("#pquote").text(quotes[index]); 
+  $("#pauthor").text(authors[index]);
+   
+ await new Promise(resolve => setTimeout(resolve, 1500)) ;
+ nxtQuote.innerText = "New Quote";
+} 
+
+function playAudio() {
+            var textInput = document.getElementById("pquote").textContent;
+
+
+            if ('speechSynthesis' in window) {
+                var synthesis = window.speechSynthesis;
+
+                var utterance = new SpeechSynthesisUtterance(textInput);
+
+                utterance.lang = 'en-US'; 
+                utterance.rate = 1.0; 
+                utterance.pitch = 1.0; 
+
+                synthesis.speak(utterance);
+            } else {
+                alert('Speech synthesis is not supported in your browser.');
+            }
+        }
+
+</script>   
+</html>
+
+
