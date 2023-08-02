@@ -378,21 +378,49 @@
 #wishCart .wishlist-item {
   margin-bottom: 10px;
 }
+   @media screen and (max-width:1111px) {
+      .introAnime .card .card-img-overlay{
+        padding-top: 42px;
+     }
+     .animeList .card-img-overlay{
+        margin-top: 75px;
+        color: white;
+        text-shadow: 2px 2px #030303;
+        cursor: pointer;    
+        transition: 0.7s;   
+        opacity: 0;
+        height: 112px;
+    }
+    .col-md-2 {
+       flex: 0 0 auto;
+       width: 20.66666667%;
+    }
+    }
 
-
-   @media screen and (max-width:768px) {
+   @media screen and (max-width:756px) {
     .introAnime .card .card-img-overlay{
-        padding-top: 50px;
+        padding-top: 40px;
+        font-size:small;
         
     }
     .introAnime{
-        
+        height:fit-content;
+        width:100%
+    }
+    .introAnime .card-img-top{
+        height: 60vh;
+        object-fit: cover;
     }
     .header .nav button:nth-child(3){
         display: none;
     }
     .header .search{
         position: relative;
+    }
+
+    .col-md-2 {
+       flex: 0 0 auto;
+       width: 29.66666667%;
     }
     .header .search i{
         position: absolute;
