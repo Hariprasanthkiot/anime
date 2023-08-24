@@ -131,8 +131,7 @@
         height: 45px;
         width: 10px;
         padding: 9px;
-        transform: translateX(-10px);
-        transform: translateY(179px);
+        transform: translateY(135px);
         margin-left: 71%;
         background-color: transparent;
         align-items: center;
@@ -149,6 +148,26 @@
     .set:hover{
         transform: translateX(7px);
     }
+    .share{
+        height: 51px;
+        width: 85px;
+        padding: 4px;
+        position:sticky;
+        cursor: pointer;
+    }
+    .share:hover{
+        transform: translateX(7px);
+    }
+    .cmt{
+        height: 60px;
+        width: 65px;
+        padding: 4px;
+        position:sticky;
+        cursor: pointer;
+    }
+    .cmt:hover{
+        transform: translateX(7px);
+    }
     .one{
         background-color: transparent;
         padding: 26px;
@@ -161,7 +180,30 @@
    animation-timing-function: linear;
    animation-iteration-count: infinite;
 }
-
+@media screen and (max-width: 956px){
+    video{
+    width: 323px;
+    height: 647px;
+    padding:9px;
+    margin-left:-30px;
+    top: 0px;
+    border-radius: 45px; ;
+    }
+    .reaction{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 45px;
+        width: 10px;
+        padding: 9px;
+        transform: translateY(135px);
+        margin-left: 91%;
+        background-color: transparent;
+        align-items: center;
+        position:sticky;
+    }
+    
+}
 @keyframes animebackground {
   from { background-position: 0 0; }
   to { background-position: 100% 0; }
@@ -249,9 +291,9 @@
         <div class="card  w-75" style="color: white; font-family: 'Poppins', sans-serif;   ">
             <div class="reaction">
                 <span class="one"><img class="set" src="like1.png"></span>
-                <span class="one"><img class="set" src="comment.png"></span>
-                <span class="one"><img class="set" src="share.png"></span>
-                <span class="one"><img class="set" src="save.png"></span>               
+                <span class="one"><img class="cmt" src="comment.png"></span>
+                <span class="one"><img class="share" src="share.png"></span>
+                <span class="one"><img class="cmt" src="save.png"></span>               
             </div>
             <video controls autoplay loop>
                 <source src="zero.mp4">
@@ -261,9 +303,9 @@
             </video>
             <div class="reaction">
                 <span class="one"><img class="set" src="like1.png"></span>
-                <span class="one"><img class="set" src="comment.png"></span>
-                <span class="one"><img class="set" src="share.png"></span>
-                <span class="one"><img class="set" src="save.png"></span>  
+                <span class="one"><img class="cmt" src="comment.png"></span>
+                <span class="one"><img class="share" src="share.png"></span>
+                <span class="one"><img class="cmt" src="save.png"></span>  
                 
             </div>
 
@@ -274,9 +316,10 @@
             </video> 
             <div class="reaction">
                 <span class="one"><img class="set" src="like1.png"></span>
-                <span class="one"><img class="set" src="comment.png"></span>
-                <span class="one"><img class="set" src="share.png"></span>
-                <span class="one"><img class="set" src="save.png"></span>
+                <span class="one"><img class="cmt" src="comment.png"></span>
+                <span class="one"><img class="share" src="share.png"></span>
+                <span class="one"><img class="cmt" src="save.png"></span>  
+                
             </div>
         
             <video controls autoplay loop>
@@ -286,9 +329,9 @@
             </video> 
             <div class="reaction">
                 <span class="one"><img class="set" src="like1.png"></span>
-                <span class="one"><img class="set" src="comment.png"></span>
-                <span class="one"><img class="set" src="share.png"></span>
-                <span class="one"><img class="set" src="save.png"></span> 
+                <span class="one"><img class="cmt" src="comment.png"></span>
+                <span class="one"><img class="share" src="share.png"></span>
+                <span class="one"><img class="cmt" src="save.png"></span> 
             </div>
             
             <video controls autoplay loop>
@@ -298,9 +341,9 @@
             </video> 
             <div class="reaction">
                 <span class="one"><img class="set" src="like1.png"></span>
-                <span class="one"><img class="set" src="comment.png"></span>
-                <span class="one"><img class="set" src="share.png"></span>
-                <span class="one"><img class="set" src="save.png"></span> 
+                <span class="one"><img class="cmt" src="comment.png"></span>
+                <span class="one"><img class="share" src="share.png"></span>
+                <span class="one"><img class="cmt" src="save.png"></span> 
             </div>
 
         
@@ -311,9 +354,9 @@
             </video> 
             <div class="reaction">
                 <span class="one"><img class="set" src="like1.png"></span>
-                <span class="one"><img class="set" src="comment.png"></span>
-                <span class="one"><img class="set" src="share.png"></span>
-                <span class="one"><img class="set" src="save.png"></span> 
+                <span class="one"><img class="cmt" src="comment.png"></span>
+                <span class="one"><img class="share" src="share.png"></span>
+                <span class="one"><img class="cmt" src="save.png"></span> 
             </div>
             
             <video controls autoplay loop>
@@ -323,9 +366,9 @@
             </video> 
             <div class="reaction">
                 <span class="one"><img class="set" src="like1.png"></span>
-                <span class="one"><img class="set" src="comment.png"></span>
-                <span class="one"><img class="set" src="share.png"></span>
-                <span class="one"><img class="set" src="save.png"></span> 
+                <span class="one"><img class="cmt" src="comment.png"></span>
+                <span class="one"><img class="share" src="share.png"></span>
+                <span class="one"><img class="cmt" src="save.png"></span> 
             </div>
             <video controls autoplay loop>
                 <source src="six.mp4">
@@ -334,9 +377,9 @@
             </video>
             <div class="reaction">
                 <span class="one"><img class="set" src="like1.png"></span>
-                <span class="one"><img class="set" src="comment.png"></span>
-                <span class="one"><img class="set" src="share.png"></span>
-                <span class="one"><img class="set" src="save.png"></span> 
+                <span class="one"><img class="cmt" src="comment.png"></span>
+                <span class="one"><img class="share" src="share.png"></span>
+                <span class="one"><img class="cmt" src="save.png"></span> 
             </div>
             <video controls autoplay loop>
                 <source src="seven.mp4">
@@ -345,9 +388,9 @@
             </video> 
             <div class="reaction">
                 <span class="one"><img class="set" src="like1.png"></span>
-                <span class="one"><img class="set" src="comment.png"></span>
-                <span class="one"><img class="set" src="share.png"></span>
-                <span class="one"><img class="set" src="save.png"></span> 
+                <span class="one"><img class="cmt" src="comment.png"></span>
+                <span class="one"><img class="share" src="share.png"></span>
+                <span class="one"><img class="cmt" src="save.png"></span> 
             </div>
             
             <video controls autoplay loop>
@@ -357,9 +400,9 @@
             </video>
             <div class="reaction">
                 <span class="one"><img class="set" src="like1.png"></span>
-                <span class="one"><img class="set" src="comment.png"></span>
-                <span class="one"><img class="set" src="share.png"></span>
-                <span class="one"><img class="set" src="save.png"></span> 
+                <span class="one"><img class="cmt" src="comment.png"></span>
+                <span class="one"><img class="share" src="share.png"></span>
+                <span class="one"><img class="cmt" src="save.png"></span> 
             </div>
         </div>
     </div>
