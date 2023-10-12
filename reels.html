@@ -419,16 +419,6 @@
             </div>
         </div>
     </div>
-    <div class="floating-window" id="floating-window">
-        <h2>Comments</h2>
-        <div class="comment-box">
-          <input id="comment-input" type="text" placeholder="Write a comment...">
-          <button id="submit-comment">Submit</button>
-        </div>
-        <ul class="comment-list" id="comment-list">
-          <!-- Comments will be displayed here -->
-        </ul>
-      </div>
     <script>
         // top scroll button
         let mybutton = document.getElementById("myBtn");
@@ -451,31 +441,7 @@
             const currentLikes = parseInt(likesSpan.innerText);
             likesSpan.innerText = currentLikes + 1;
         }
-        // script for comment
-        const toggleButton = document.getElementById('toggle-button');
-  const floatingWindow = document.getElementById('floating-window');
-  const commentInput = document.getElementById('comment-input');
-  const submitButton = document.getElementById('submit-comment');
-  const commentList = document.getElementById('comment-list');
-
-  toggleButton.addEventListener('click', () => {
-    floatingWindow.style.display = 'block';
-  });
-
-  submitButton.addEventListener('click', () => {
-    const commentText = commentInput.value.trim();
-    if (commentText !== '') {
-      addComment(commentText);
-      commentInput.value = '';
-    }
-  });
-
-  function addComment(commentText) {
-    const commentItem = document.createElement('li');
-    commentItem.className = 'comment';
-    commentItem.textContent = commentText;
-    commentList.appendChild(commentItem);
-  }
+     //write for comment
     </script>
 </body>
 
