@@ -151,26 +151,34 @@
     <div class="container-fluid">
         <div class="logincard glow">
             <h1>manga<span style="color: var(--blue);">us!!</span></h1>
-                <form action="post" >
+                <form action="connect.php" method="post" onsubmit="return validateForm()" >
                     <div class="form-floating"> 
-                        <input type="text" class="form-control" id="name" placeholder="name" type="text" title="please enter your new  username" pattern="[a-zA-Z0-9]+" required>
+                        <input type="text" class="form-control" id="name" placeholder="name" type="text" title="please enter your new  username" pattern="[a-zA-Z0-9]+" required name="username">
                         <label  for="password">User Name</label> 
                       </div>
                     <div class="form-floating">
-                       <input type="text" id="mail" class="form-control" placeholder="email" type="email" required >
+                       <input type="text" id="mail" class="form-control" placeholder="email" type="email" required name="email" >
                        <label  for="mail">Email Address</label> 
                      </div>
                    <div class="form-floating"> 
-                      <input type="text" class="form-control" id="password" placeholder="pass" type="password" title="Password Must Contain A Number, An Alphabet and A Symbol" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" required>
+                      <input type="text" class="form-control" id="password" placeholder="pass" type="password" title="Password Must Contain A Number, An Alphabet and A Symbol" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" required name="password">
                       <label  for="password">Password</label>  
                     </div>  
                  <div class="form-floating"> 
-                        <input type="text" class="form-control" id="password" placeholder="pass" type="password" title="Password Must Contain A Number, An Alphabet and A Symbol" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" required>
+                        <input type="text" class="form-control" id="confirm_password" placeholder="pass" type="password" title="Password Must Contain A Number, An Alphabet and A Symbol" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" required name="confrimpassword">
                         <label  for="password">Confrim Password</label>  
                  </div>  
+                 <div class="form-floating"> 
+                 <label for="mail">gender</label>
+                    <div>
+                        <label for="male" class="radio-inline"><input type="radio" name="gender" value="m" id="male">Male</label>
+                        <label for="female" class="radio-inline"><input type="radio" name="gender" value="f" id="female">Female</label>
+                        <label for="others" class="radio-inline"><input type="radio" name="gender" value="o" id="male">others</label>
+                    </div>
+                 </div>
                   
-                    <input id="submit" value="LOGIN" type="submit" class="btn btn-primary"  style="font-family:'Josefin Sans', sans-serif ; color: white;"> <br>
-                </div>
+                    <input id="submit" value="LOGIN" type="submit" class="btn btn-primary"  style="font-family:'Josefin Sans', sans-serif ; color: white;" onfocus="callOf()"> <br>
+                 </div>
                 </form> 
                  
                 <div class="extra">
@@ -183,4 +191,21 @@
             
     </div>
 </body>
+<script>
+    //both-password vaildate
+    function validateForm() {
+        var password = document.getElementById("password").value;
+        var confirm_password = document.getElementById("confirm_password").value;
+
+        if (password !== confirm_password) {
+            alert("Password and confirm password do not match!");
+            return false; // Prevent form submission
+        }
+        return true; // Allow form submission
+    }
+    //shift to next page
+    function callOf() {
+        window.location.href = "index.html"
+    }
+</script>
 </html>
