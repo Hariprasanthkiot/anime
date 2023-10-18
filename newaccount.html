@@ -114,6 +114,10 @@
         margin-left: 0px;
         cursor:cell;
     }
+    .gender{
+        color: rgb(255 187 96);
+
+    }
     @media screen and (max-width: 760px) {
         .container-fluid{
             display: flex;
@@ -168,9 +172,9 @@
                         <input type="text" class="form-control" id="confirm_password" placeholder="pass" type="password" title="Password Must Contain A Number, An Alphabet and A Symbol" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" required name="confrimpassword">
                         <label  for="password">Confrim Password</label>  
                  </div>  
-                 <div class="form-floating"> 
+                 <div  class="gender"> 
                  <label for="mail">gender</label>
-                    <div>
+                    <div >
                         <label for="male" class="radio-inline"><input type="radio" name="gender" value="m" id="male">Male</label>
                         <label for="female" class="radio-inline"><input type="radio" name="gender" value="f" id="female">Female</label>
                         <label for="others" class="radio-inline"><input type="radio" name="gender" value="o" id="male">others</label>
