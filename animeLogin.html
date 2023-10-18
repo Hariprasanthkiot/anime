@@ -150,7 +150,7 @@
     <div class="container-fluid">
         <div class="logincard glow">
             <h1>manga<span style="color: var(--blue);">us!!</span></h1>
-                <form action="animeHome.html" >
+                <form action="login.php" method="post" >
                  <div class="form-floating">
                     <input type="text" id="mail" class="form-control" placeholder="email" type="email" required >
                     <label  for="mail">Email Address</label> 
@@ -159,7 +159,7 @@
                     <input type="text" class="form-control" id="password" placeholder="pass" type="password" title="Password Must Contain A Number, An Alphabet and A Symbol" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" required>
                     <label  for="password">Password</label>  
                   </div>  
-                    <input id="submit" value="LOGIN" type="submit" class="btn btn-primary"  style="font-family:'Josefin Sans', sans-serif ; color: white;"> <br>
+                    <input id="submit" value="LOGIN" type="submit" class="btn btn-primary"  style="font-family:'Josefin Sans', sans-serif ; color: white;" onfocus="callOf()"> <br>
 
                 </div>
                 </form> 
@@ -176,4 +176,9 @@
             
     </div>
 </body>
+<script>
+    function callOf() {
+        window.location.href = "index.html"
+    }
+</script>
 </html>
