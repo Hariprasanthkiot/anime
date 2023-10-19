@@ -155,7 +155,7 @@
     <div class="container-fluid">
         <div class="logincard glow">
             <h1>manga<span style="color: var(--blue);">us!!</span></h1>
-                <form action="connect.php" method="post" onsubmit="return validateForm()" >
+                <form id="myForm" action="connect.php" method="post"   > <!--onsubmit="return validateForm()"-->
                     <div class="form-floating"> 
                         <input type="text" class="form-control" id="name" placeholder="name" type="text" title="please enter your new  username" pattern="[a-zA-Z0-9]+" required name="username">
                         <label  for="password">User Name</label> 
@@ -181,7 +181,7 @@
                     </div>
                  </div>
                   
-                    <input id="submit" value="LOGIN" type="submit" class="btn btn-primary"  style="font-family:'Josefin Sans', sans-serif ; color: white;" onfocus="callOf()"> <br>
+                    <input id="submit" value="LOGIN" type="submit" class="btn btn-primary"  style="font-family:'Josefin Sans', sans-serif ; color: white;" > <br>
                  </div>
                 </form> 
                  
@@ -208,8 +208,17 @@
         return true; // Allow form submission
     }
     //shift to next page
-    function callOf() {
-        window.location.href = "index.html"
-    }
+         function callOf() {                    
+             window.open ("index.html") 
+          }
+
+          document.getElementById("myForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent form submission
+
+            if (validateForm()) { // if the validate form is true its enter or its stay
+                callOf();
+            }
+        });
+
 </script>
 </html>
