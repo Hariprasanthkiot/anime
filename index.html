@@ -83,9 +83,9 @@
         margin-left: 0px;
     }
     .header  button{
-        margin-right: 25px;
-        margin-left: 30px;
-        border: 2px solid;
+        margin-right: auto;
+        margin-left: 8px;
+        border: 3px solid;
         transition: transform 1.2s;
     }
     .header  button:hover{
@@ -340,15 +340,12 @@
   width: 300px;
   background: #dc3545;
   z-index: 9999;
-  padding: 20px;
+  padding: 35px;
   transition: all 0.8s ease-in-out;
   display: flex;
   
   flex-direction: column;
-  align-items: flex-start
-  
-  
-  ;
+  align-items: flex-start;
 }
 #cartPage .btn{
     top: 5px;
@@ -392,10 +389,7 @@
         opacity: 0;
         height: 117px;
     }
-    .col-md-2 {
-       flex: 0 0 auto;
-       width: 33.66666667%;
-    }
+
     }
 
    @media screen and (max-width:567px) {
@@ -437,10 +431,7 @@
         position: relative;
     }
 
-    .col-md-2 {
-       flex: 0 0 auto;
-       width: 49.66666667%;
-    }
+
     .header .search i{
         position: absolute;
         top: 0;
@@ -462,11 +453,12 @@
     <div class="container-fluid">
         <div class="header  mt-5 mt-lg-2 d-flex ">
             <nav class="navbar navbar-fixed-top   w-100  navbar-expand-lg bg-primary">
-                  <a class="navbar-brand" style="font-size: 30px;        font-family: 'Bruno Ace SC', cursive;
-                  "  href="#">manga us!! </a>
+                  
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button>
+                  <a class="navbar-brand" style="font-size: 30px;        font-family: 'Bruno Ace SC', cursive;
+                  "  href="#">manga us!! </a>
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                       <li class="nav-item">
@@ -516,7 +508,7 @@
      flex-wrap">
         <h2 style="color: white";>popular mangas</h2>
          <div class="card-group row">
-           <div class="col-4 col-md-2 col-lg-2"> 
+           <div class="col-6 col-md-3 col-lg-2 col-sm-4" > 
             <div class="card  col shadow p-2 mb-2 bg-black">  
                 <img class="card-img-top" src="1.webp" alt="Card image cap">
                 <div class="card-img-overlay" >
@@ -529,7 +521,7 @@
                 </div>
             </div>
              </div>
-             <div class="col-4 col-md-2 col-lg-2"> 
+             <div class="col-6 col-md-3 col-lg-2 col-sm-4"> 
   
             <div class="card col shadow p-2 mb-2 bg-black">
                 <img class="card-img-top" src="2.webp" alt="Card image cap">
@@ -543,7 +535,7 @@
                 </div>
             </div>
             </div>
-            <div class="col-4 col-md-2 col-lg-2"> 
+            <div class="col-6 col-md-3 col-lg-2 col-sm-4"> 
   
                 <div class="card col shadow p-2 mb-2 bg-black">
                     <img class="card-img-top" src="3.webp" alt="Card image cap">
@@ -557,7 +549,7 @@
                     </div>
                 </div>
                 </div>
-      <div class="col-4 col-md-2 col-lg-2">     
+      <div class="col-6 col-md-3 col-lg-2 col-sm-4">     
             <div class="card col shadow p-2 mb-2 bg-black">
                 <img class="card-img-top" src="4.webp" alt="Card image cap">
                 <div class="card-img-overlay">
@@ -570,7 +562,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-4 col-md-2 col-lg-2"> 
+        <div class="col-6 col-md-3 col-lg-2 col-sm-4"> 
     
             <div class="card col shadow p-2 mb-2 bg-black">
                 <img class="card-img-top" src="5.webp" alt="Card image cap">
@@ -584,7 +576,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-4 col-md-2 col-lg-2"> 
+        <div class="col-6 col-md-3 col-lg-2 col-sm-4"> 
     
             <div class="card col shadow p-2 mb-2 bg-black">
                 <img class="card-img-top" src="6.webp" alt="Card image cap">
@@ -598,7 +590,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-4 col-md-2 col-lg-2"> 
+        <div class="col-6 col-md-3 col-lg-2 col-sm-4"> 
     
             <div class="card col shadow p-2 mb-2 bg-black">
                 <img class="card-img-top" src="7.webp" alt="Card image cap">
@@ -632,9 +624,10 @@
 <script>
 
 var cartBtn = document.getElementById("cartPage");
+//cartpage will show wishlist item
 var toggleBtn = document.getElementById("wishToggle");
-
-toggleBtn.addEventListener("click", () =>{
+//wishtoggle is btn for our wishlist                       
+toggleBtn.addEventListener("click", () =>{  
     cartBtn.classList.toggle("showPage")
 });
 
@@ -787,4 +780,3 @@ function playAudio() {
 
 </script>   
 </html>
-
