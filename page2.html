@@ -289,9 +289,6 @@
         display: flex;
         width: 100vh;
     }
-    .header .logo{
-        
-    }
     .header i{
                 scale: 0.6;
         transform: translateX(-7px);
@@ -352,7 +349,7 @@
             <div class="features">
                 <ul>
                     <li><i onclick="playAudio()" id="sound" title="Hear Quote As Sound" data-toggle="tooltip" class="fa fa-volume-up"></i></li>
-                    <li><i id="copy" title="Copy To Clipboard" data-toggle="tooltip" class="fa fa-copy"></i></li>
+                    <li><i onclick="copy()" id="copy" title="Copy To Clipboard" data-toggle="tooltip" class="fa fa-copy"></i></li>
                     <li><i id="share" title="Share" data-toggle="tooltip" class="fa fa-share-alt"></i></li>
                 </ul>
                 <button onclick="show()" id="nextQuote" class="btn btn-success">New Quote</button>
@@ -363,6 +360,20 @@
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
+    //copie function
+function copy(){
+    let quoteText = document.querySelector('#pquote');
+    let quoteAuthor = document.querySelector('#pauthor');
+    
+    let text = quoteText.textContent;
+    let author = quoteAuthor.textContent;
+    navigator.clipboard.writeText(`${text} ${author}`);
+
+    alert(`Quote by ${author} copied to clipboard!`);
+
+}
+
+// likes
     var hearts = document.querySelectorAll(".wishlist i");
 
     hearts.forEach((heart) => {
@@ -487,5 +498,4 @@ function playAudio() {
 
 </script>   
 </html>
-
 
